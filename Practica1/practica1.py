@@ -1,0 +1,2 @@
+def sumaBinario(a,b):
+    
