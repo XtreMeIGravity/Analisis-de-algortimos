@@ -10,6 +10,7 @@ void main(){
     imprimeArreglo(a);
     InsertionSort(a);
 }
+
 void InsertionSort(int *a){
     int j,key,i;
     for (i = 1; i < tam(a); i++){
@@ -23,12 +24,14 @@ void InsertionSort(int *a){
         a[j+1]=key;
     }
 }
+
 void imprimeArreglo(int *a){
     for (int i = 0; i < tam(a); i++){
         printf("%d |",a[i]);
     }
     printf("\n");
 }
+
 int tam(int *a){
     int i=0;
     while (a[i]){
