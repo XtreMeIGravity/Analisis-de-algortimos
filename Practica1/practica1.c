@@ -1,43 +1,59 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <math.h>
 #include <time.h>
 
-void sumaBin(int *a,int *b,int leng);
+void sumaBin(int *a,int *b,int *resultado,int leng);
 void imprimeArreglo(int *array,int leng);
+void imprimeArreglo2(int *array,int leng);
 void InvertirArreglo(int *array, int leng);
 void main(){
     int n,i ;
     time_t t;
     srand((unsigned) time(&t));
-    for ( n = 1; n <= 30; n++)
+    for ( n = 1; n <= 65; n=2*n )//aumento de tamaño de arreglo
     {
-        int a[n], b[n];
-        for (i = 0; i < n; i++)
-        {
+        int a[n], b[n] , resultado[n+1];
+        while (i<=n+1){
+            resultado[i]=0;
+            i++;
+        }
+        for (i = 0; i < n; i++){
             a[i]= rand()%2;
             b[i]= rand()%2;
         }
-        imprimeArreglo(a,n);
-        imprimeArreglo(b,n);
-        sumaBin(a,b,n);
+        //imprimeArreglo(a,n);
+        //imprimeArreglo(b,n);
+        sumaBin(a,b,resultado,n);
+        //imprimeArreglo2(resultado,n+1);
+        printf("\n");
     }
 }
-void sumaBin(int *a,int *b,int leng){
-    int c=0, i=0, resultado[leng+1];
-    for (i = leng; i >= 0; i--){
-        resultado[i+1]=a[i-1]+b[i-1]+c;printf("%d|",resultado[i+1]);
-        if( resultado[i+1] == 2 ){
-            resultado[i+1]=resultado[i+1]%2;printf("%d|",resultado[i+1]);
-            c=1;
-        }else if( resultado[i+1] == 3 ){
-            c=0;
+void sumaBin(int *a,int *b,int *resultado,int leng){
+    int c=0, i=0,k=0;
+    k++;
+    for (i = leng; i > 0; i--){
+        k++;
+        resultado[(i)]=a[(i-1)]+b[(i-1)]+resultado[(i)];k++;
+        k++;
+        if( resultado[(i)] >= 2){
+            resultado[(i)]=resultado[(i)]%2;k++;
+            resultado[(i-1)]=1;k++;
+        }else{k++;
+            resultado[(i-1)]=0;k++;
         }
     }
-    imprimeArreglo(resultado,leng+1);
-    printf("\n");
+    printf("(%d,%d)\n",leng,k);
 }
 void imprimeArreglo(int *array,int leng){
-    printf("\t");
+    printf(" ");
+    for (int i = 0; i < leng; i++){
+        printf("%d",array[i]);
+    }
+    printf("\n");
+}
+
+void imprimeArreglo2(int *array,int leng){
     for (int i = 0; i < leng; i++){
         printf("%d",array[i]);
     }
