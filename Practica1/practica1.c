@@ -43,7 +43,7 @@ void sumaBin(int *a,int *b,int *resultado,int leng){
             resultado[(i-1)]=0;k++;
         }
     }
-    printf("(%d,%d)\n",leng,k);
+    printf("(%d,%d)",leng,k);
 }
 void imprimeArreglo(int *array,int leng){
     printf(" ");
