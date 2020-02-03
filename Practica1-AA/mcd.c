@@ -19,7 +19,13 @@ int mcd(int m, int n);
 int fibonacci(int n);
 
 int main(){
-
+ int n,m,i,lim=10;
+    for(i=1; i<=lim; i++){
+      m=fibonacci(i);
+      n=fibonacci(i-1);
+      printf("N: %d, M=%d \n\n",n,m);
+      printf("MCD: %d \n",mcd(m,n));
+    }
     return 0;
 }
 
