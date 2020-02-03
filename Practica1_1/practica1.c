@@ -1,3 +1,16 @@
+/*
+        INSTITUTO POLITÉCNICO NACIONAL
+         ESCUELA SUPERIOR DE CÓMPUTO
+           ANÁLISIS DE ALGORITMOS 
+              SEMESTRE 2020-2
+                GRUPO: 3CV2
+        EQUIPO:
+          -- LÓPEZ HERNÁNDEZ DAVID
+          -- TOLENTINO PÉREZ JAZMIN YANELI
+             PRÁCTICA No1: DETERMINACIÓN EXPERIMENTAL
+            DE LA COMPLEJIDAD TEMPORAL DE UN ALGORITMO
+*/
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
