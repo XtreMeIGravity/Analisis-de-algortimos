@@ -45,8 +45,7 @@ void main(){
 void sumaBin(int *a,int *b,int *resultado,int leng){
     int c=0, i=0,k=0;
     k++;
-    for (i = leng; i > 0; i--){
-        k++;
+    for (i = leng; i > 0; i--){k++;
         resultado[(i)]=a[(i-1)]+b[(i-1)]+resultado[(i)];k++;
         k++;
         if( resultado[(i)] >= 2){
