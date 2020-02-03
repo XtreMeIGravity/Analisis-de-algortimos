@@ -23,7 +23,7 @@ int main(){
     for(i=1; i<=lim; i++){
       m=fibonacci(i);
       n=fibonacci(i-1);
-      printf("N: %d, M=%d \n\n",n,m);
+      printf("\nN: %d, M=%d \n",n,m);
       printf("MCD: %d \n",mcd(m,n));
     }
     return 0;
@@ -36,7 +36,7 @@ int mcd(int m, int n){
         m=n; cont++;
         n=r;cont++;
     }cont++;
-    printf("Tiempo: %d",cont);
+    printf("Tiempo: %d\n",cont);
     return m;
 }
 
