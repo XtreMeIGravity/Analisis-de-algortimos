@@ -10,11 +10,8 @@
              PRÁCTICA No1: DETERMINACIÓN EXPERIMENTAL
             DE LA COMPLEJIDAD TEMPORAL DE UN ALGORITMO
 */
-
-
 #include <stdio.h>
 #include <stdlib.h>
-#include <math.h>
 #include <time.h>
 
 int max(int *a , int leng);
@@ -24,9 +21,8 @@ void main(){
     int n,a[leng];
     time_t t;
     srand((unsigned) time(&t));
-    for ( n = 0; n < leng; n++ )//aumento de tamaño de arreglo
-    {
-        a[n]= rand()%200;
+    for ( n = 0; n < leng; n++ ){//aumento de tamaño de arreglo
+        a[n]= rand()%1000;
     }
     printf("a:");imprimeArreglo(a,leng);
     printf("max: %d",max(a,leng));
