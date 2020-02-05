@@ -27,7 +27,6 @@ void main(){
     printf("a:");imprimeArreglo(a,leng);
     printf("max: %d",max(a,leng));
     printf("\n");
-
 }
 int max(int *a , int leng){
     int tmp=a[0];
