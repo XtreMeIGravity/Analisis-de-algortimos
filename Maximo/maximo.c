@@ -29,13 +29,13 @@ void main(){
     printf("\n");
 }
 int max(int *a , int leng){
-    int tmp=a[0];
-    for (int i = 1; i < leng; i++){
+    int tmp=a[0];//almacena un temporal 
+    for (int i = 1; i < leng; i++){//comparara con todos y remplazara en caso de que sea mayor
         if (tmp < a[i]){
             tmp=a[i];
         }
     }
-    return tmp;
+    return tmp;//retorna el mayor despues de todo el recorrido
 }
 void imprimeArreglo(int *array,int leng){
     for (int i = 0; i < leng; i++){

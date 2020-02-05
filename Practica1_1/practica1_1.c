@@ -16,7 +16,7 @@
 #include <math.h>
 #include <time.h>
 
-void sumaBin(int *a,int *b,int *resultado,int leng);
+void sumaBin(int *a,int *b,int *resultado,int leng);//Declaracion suma binaria
 void imprimeArreglo(int *array,int leng);
 void imprimeArreglo2(int *array,int leng);
 void main(){
@@ -25,30 +25,29 @@ void main(){
     srand((unsigned) time(&t));
     for ( n = 1; n <= 65; n=2*n )//aumento de tamaño de arreglo
     {
-        int a[n], b[n] , resultado[n+1];//Se declara 
+        int a[n], b[n] , resultado[n+1];//Se declaran los arreglos y donde se volcara el resultado con el tamaño mas 1
         i=0;
-        while (i<=n+1){
+        while (i<=n+1){//rellena el arreglo de resultado de 0
             resultado[i]=0;
             i++;
         }
-        for (i = 0; i < n; i++){
+        for (i = 0; i < n; i++){//llena los arreglos a y b  con 0 y 1 de manera aleatoria
             a[i]= rand()%2;
             b[i]= rand()%2;
-            //a[i]=b[i]=1;
         }
-        printf("a:");        imprimeArreglo(a,n);
-        printf("b:");        imprimeArreglo(b,n);
+        printf("a:");        imprimeArreglo(a,n);//Imprime el arreglo a con tamaño n
+        printf("b:");        imprimeArreglo(b,n);//Imprime el arreglo b con tamaño n
         sumaBin(a,b,resultado,n);
         printf("\n");
     }
 }
-void sumaBin(int *a,int *b,int *resultado,int leng){
-    int c=0, i=0,k=0;
+void sumaBin(int *a,int *b,int *resultado,int leng){//Declaracion suma binaria
+    int i=0,k=0;//declaracion de variables
     k++;
-    for (i = leng; i > 0; i--){k++;
-        resultado[(i)]=a[(i-1)]+b[(i-1)]+resultado[(i)];k++;
+    for (i = leng; i > 0; i--){k++; //El primer for 
+        resultado[(i)]=a[(i-1)]+b[(i-1)]+resultado[(i)];k++;//suma los numeros
         k++;
-        if( resultado[(i)] >= 2){
+        if( resultado[(i)] >= 2){//si es mayor a 2 crea un carry en la posicion i-1
             resultado[(i)]=resultado[(i)]%2;k++;
             resultado[(i-1)]=1;k++;
         }else{k++;
@@ -59,14 +58,14 @@ void sumaBin(int *a,int *b,int *resultado,int leng){
     printf("r:"); imprimeArreglo2(resultado,leng+1);
     printf("(%d,%d)",leng,k);
 }
-void imprimeArreglo(int *array,int leng){
+void imprimeArreglo(int *array,int leng){//Imprime un arreglo de enteros desplazando una pos a la derecha
     printf(" ");
     for (int i = 0; i < leng; i++){
         printf("%d",array[i]);
     }
     printf("\n");
 }
-void imprimeArreglo2(int *array,int leng){
+void imprimeArreglo2(int *array,int leng){//Imprime el arreglo sin el dezplazamiento
     for (int i = 0; i < leng; i++){
         printf("%d",array[i]);
     }
